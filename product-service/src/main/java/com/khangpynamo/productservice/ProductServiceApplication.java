@@ -1,4 +1,4 @@
-package com.khangpynamo.product_service;
+package com.khangpynamo.productservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

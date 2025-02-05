@@ -1,4 +1,4 @@
-package com.khangpynamo.product_service.model;
+package com.khangpynamo.productservice.model;
 
 import java.math.BigDecimal;
 

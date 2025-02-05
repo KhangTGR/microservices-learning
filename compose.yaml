@@ -1,0 +1,26 @@
+services:
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "root"
+      MONGO_INITDB_ROOT_PASSWORD: "Khang123"
+    command: ["--auth"]
+
+  mongo-gui:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    ports:
+      - "28081:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: "root"
+      ME_CONFIG_MONGODB_ADMINPASSWORD: "Khang123"
+      ME_CONFIG_MONGODB_URL: mongodb://root:Khang123@mongo:27017/?authSource=admin
+      ME_CONFIG_BASICAUTH: false
+    depends_on:
+      - mongo

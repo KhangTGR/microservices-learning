@@ -1,4 +1,4 @@
-package com.khangpynamo.product_service.dto;
+package com.khangpynamo.productservice.dto;
 
 import java.math.BigDecimal;
 
@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 @NoArgsConstructor
-public class ProductRequest {
+public class ProductResponse {
+    private String id;
     private String name;
     private String description;
     private BigDecimal price;

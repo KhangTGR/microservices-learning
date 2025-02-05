@@ -1,4 +1,4 @@
-package com.khangpynamo.product_service;
+package com.khangpynamo.productservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

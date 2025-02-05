@@ -1,8 +1,8 @@
-package com.khangpynamo.product_service.controller;
+package com.khangpynamo.productservice.controller;
 
-import com.khangpynamo.product_service.dto.ProductRequest;
-import com.khangpynamo.product_service.dto.ProductResponse;
-import com.khangpynamo.product_service.service.ProductService;
+import com.khangpynamo.productservice.dto.ProductRequest;
+import com.khangpynamo.productservice.dto.ProductResponse;
+import com.khangpynamo.productservice.service.ProductService;
 
 import java.util.List;
 
