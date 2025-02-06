@@ -26,8 +26,14 @@ public class ProductService {
                 .price(productRequest.getPrice())
                 .build();
                 
-        productRepository.save(product);
-        log.info("Product {} is saved", product.getId());
+        try {
+            productRepository.save(product);
+            log.info("Successfully saved product with ID: {}", product.getId());
+        } catch (Exception e) {
+            log.error("Failed to save product with name '{}' due to: {}", productRequest.getName(), e.getMessage());
+        }
+        
+        log.info("Created product with ID '{}' and name: {}", product.getId(), product.getName());
     }
     
     private ProductResponse mapToProductResponse(Product product){
@@ -40,8 +46,13 @@ public class ProductService {
     }
     
     public List<ProductResponse> getAllProducts(){
-        List<Product> products = productRepository.findAll();
-        
-        return products.stream().map(this::mapToProductResponse).toList();
+        try {
+            List<Product> products = productRepository.findAll();
+            log.info("Retrieved {} products from the database", products.size());
+            return products.stream().map(this::mapToProductResponse).toList();
+        } catch (Exception e) {
+            log.error("Failed to retrieve products from the database due to: {}", e.getMessage());
+            return List.of();
+        }
     }
 }
